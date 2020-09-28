@@ -13,14 +13,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    #- name: Setup .NET Core
+    #  uses: actions/setup-dotnet@v1
+    #  with:
+    #    dotnet-version: 3.1.301
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v1.7.1
       with:
-        dotnet-version: 3.1.301
-    - name: .Net SDK Project file Version
-      uses: jasondavis303/net-sdk-proj-file-version@v1.0.1
-      with:
-        PROJ_FILE: BOTW_SaveConv.csproj 
+        dotnet-version: 4.6.1
     - name: Install dependencies
       run: dotnet restore BotWSaveManager.sln
     - name: Build
